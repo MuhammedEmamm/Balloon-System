@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="BalloonApp">
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+	    <link rel="icon" href="assets/images/acmicon.png" type="image/x-icon">
+<title>acmASCIS'Balloon System</title>
+</head>
+
+<body ng-controller="BalloonSystem">
+
+	<div style="margin-top: 2% ; margin-bottom: 1% ;"><h1 class="text-center" style=" font-family: 'Black Han Sans', sans-serif;">acmASCIS Level 2 Qualification Contest 2018 &nbsp;&nbsp;&nbsp; <img src="assets/images/QNSzGrS.png"></h1><h3  class="text-center" style="font-family: 'Black Han Sans', sans-serif;">acmASCIS's Balloon System &nbsp;&nbsp;&nbsp;<img src="assets/images/balloons-green-icon.png"></h3></div>
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Who</th>
+				<th scope="col">Problem Index</th>
+				<th scope="col">Problem Name</th>
+				<th scope="col">Problem Color</th>
+				<th scope="col">Delivered</th>
+				<th scope="col">Balloon Status</th>
+				<th scope="col">Room</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="x in AcceptedList">
+				<th scope="row">{{x.ID}}</th>
+				<td>{{x.Handle}}</td>
+				<td>{{x.ProblemIndex}}</td>
+				<td>{{x.ProblemName}} </td>
+				<td>
+					<div style="height: 25px ; width: 50px; background-color:blueviolet; border-radius: 10px" ng-if="x.BalloonColor=='FU'"></div>
+					<div style="height: 25px ; width: 50px; background-color: silver; border-radius: 10px" ng-if="x.BalloonColor=='SL'"></div>
+					<div style="height: 25px ; width: 50px; background-color: darkgoldenrod; border-radius: 10px" ng-if="x.BalloonColor=='GD'"></div>
+					<div style="height: 25px ; width: 50px; background-color: deepskyblue; border-radius: 10px" ng-if="x.BalloonColor=='LB'"></div>
+					<div style="height: 25px ; width: 50px; background-color: red; border-radius: 10px" ng-if="x.BalloonColor=='RD'"></div>
+				</td>
+				<td>
+					<div class="checkbox">
+						<input type="checkbox" ng-model="x.Delivered" ng-click="SaveCheckList()">
+					</div>
+				</td>
+				<td>
+					<span ng-if="x.BalloonsCount===3" class="badge badge-pill badge-primary">First Accepted</span><span ng-if="x.BalloonsCount===2" class="badge badge-pill badge-info">First Solved</span><span ng-if="x.BalloonsCount===1" class="badge badge-pill badge-success">Accepted</span>
+				</td>
+				<td>{{x.Room}}</td>
+			</tr>
+
+		</tbody>
+	</table>
+				<h1 class="text-center" ng-if="AcceptedList.length===0" style=" font-family: 'Black Han Sans', sans-serif;margin-top: 2% ; margin-bottom: 1% ;">Waiting For Server Response.</h1>
+
+<footer style="background-color: #212529"><div class="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12 pull-left">
+					<p class="text-center" style="color: white ; font-family: 'Anton', sans-serif;">Design and developed by acmASCIS's Technical Committee. 2018 All Rights Reserved.</p>
+				</div>
+			</div>
+		</div>
+	</div></footer>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="assets/js/angular.js"></script>
+	<script src="assets/js/angular-cookies.min.js"></script>
+	<script src="assets/js/Plugins.js"></script>
+
+</body>
+
+</html>
