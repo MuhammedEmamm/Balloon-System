@@ -175,7 +175,7 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 					
 					for(var i = 0  ; i < $scope.AcceptedList.length ; i++){
 						
-					 		if (i < 100 && $scope.checklist1 != undefined && $scope.checklist1.length != 0) {
+					 		if (i < 80   && $scope.checklist1 != undefined && $scope.checklist1.length != 0) {
 							for(var j = 0 ; j < $scope.checklist1.length ; j++){
 							
 								if ($scope.AcceptedList[i].ID === $scope.checklist1[j].index) {
@@ -187,7 +187,7 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 						
 
 					}
-					 		if (i >= 100 && i < 200 && $scope.checklist2 != undefined && $scope.checklist2.length != 0) {
+					 		if (i >= 80  && i < 160 && $scope.checklist2 != undefined && $scope.checklist2.length != 0) {
 						
 							for(var j = 0 ; j < $scope.checklist2.length ; j++){
 							
@@ -199,7 +199,7 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 						
 
 					}
-					 		if (i >= 200 && i < 300 && $scope.checklist3 != undefined && $scope.checklist3.length != 0) {
+					 		if (i >= 160 && i < 240 && $scope.checklist3 != undefined && $scope.checklist3.length != 0) {
 							for(var j = 0 ; j < $scope.checklist3.length ; j++){
 							
 								if ($scope.AcceptedList[i].ID === $scope.checklist3[j].index) {
@@ -210,7 +210,7 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 						
 
 					}
-					 		if (i >= 300 && i < 400 && $scope.checklist4 != undefined && $scope.checklist4.length != 0) {
+					 		if (i >= 240 && i < 320 && $scope.checklist4 != undefined && $scope.checklist4.length != 0) {
 						
 							for(var j = 0 ; j < $scope.checklist4.length ; j++){
 							
@@ -223,7 +223,7 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 						
 
 					}
-							if (i >= 400 && i < 500 && $scope.checklist5 != undefined && $scope.checklist5.length != 0) {
+							if (i >= 320 && i < 400 && $scope.checklist5 != undefined && $scope.checklist5.length != 0) {
 						for(var j = 0 ; j < $scope.checklist5.length ; j++){
 							
 								if ($scope.AcceptedList[i].ID === $scope.checklist5[j].index) {
@@ -275,7 +275,7 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 			
 
 		} 
-			if (i >= 100 && i < 200) {
+			if (i >= 80  && i < 160) {
 				//	console.log('ss11'); 
 				//console.log(i) ; 
 				if ($scope.AcceptedList[i].Delivered) {
@@ -293,7 +293,7 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 			
 
 		}
-		 	if (i>= 200 && i < 300) {
+		 	if (i >= 160 && i < 240) {
 			
 				if ($scope.AcceptedList[i].Delivered) {
 					$scope.checklist3.push({
@@ -310,7 +310,7 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 			
 
 		} 
-			if ( i>= 300 && i < 400) {
+			if (i >= 240 && i < 320) {
 				if ($scope.AcceptedList[i].Delivered) {
 					$scope.checklist4.push({
 						status: true,
@@ -326,7 +326,7 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 			
 
 		} 
-			if (i>= 400 && i < 500) {
+			if (i >= 320 && i < 400) {
 			
 				if ($scope.AcceptedList[i].Delivered) {
 					$scope.checklist5.push({
