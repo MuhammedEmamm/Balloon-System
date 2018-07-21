@@ -108,6 +108,8 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 					//(response.data.result);
 					var id = 1;
 					$scope.all = response.data.result.reverse();
+			//console.log($scope.all) ; 
+					
 					for (var i = 0; i < $scope.all.length; i++) {
 
 						if (($scope.all[i].verdict === "OK") && ($scope.all[i].author.members[0].handle === 'hajergad' || $scope.all[i].author.members[0].handle === 'AhmedMohamd-BeatMeIFUCAN' || $scope.all[i].author.members[0].handle === 'nSayed' || $scope.all[i].author.members[0].handle === 'abdelrahman____tarek' || $scope.all[i].author.members[0].handle === 'm.yossry' || $scope.all[i].author.members[0].handle === 'Heshamovic' || $scope.all[i].author.members[0].handle === 'HazemEssawi' || $scope.all[i].author.members[0].handle === 'AbdullahKamal' || $scope.all[i].author.members[0].handle === 'Hazemahmed' || $scope.all[i].author.members[0].handle === 'Zooma' || $scope.all[i].author.members[0].handle === 'islammohsen' || $scope.all[i].author.members[0].handle === 'Mark_Louba' || $scope.all[i].author.members[0].handle === 'omniaa' || $scope.all[i].author.members[0].handle === 'WaleedEhab_ChelseaFC' || $scope.all[i].author.members[0].handle === '.99.' || $scope.all[i].author.members[0].handle === 'MohammadAmr')) {
@@ -138,7 +140,9 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 
 						}
 					}
+					
 					$scope.AcceptedList = $scope.AcceptedList.reverse();
+			
 					for (var i = ($scope.AcceptedList.length - 1); i >= 0; i--) {
 						if (i === ($scope.AcceptedList.length - 1)) {
 
@@ -168,20 +172,23 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 
 						}
 					}
-					if ($scope.AcceptedList.length <= 100 && $scope.checklist1 != undefined && $scope.checklist1.length != 0) {
-						for (var i = 0; i < $scope.AcceptedList.length; i++) {
+					
+					for(var i = 0  ; i < $scope.AcceptedList.length ; i++){
+						
+					 		if (i < 100 && $scope.checklist1 != undefined && $scope.checklist1.length != 0) {
 							for(var j = 0 ; j < $scope.checklist1.length ; j++){
 							
-							if ($scope.AcceptedList[i].ID === $scope.checklist1[j].index) {
-								$scope.AcceptedList[i].Delivered = $scope.checklist1[j].status;
+								if ($scope.AcceptedList[i].ID === $scope.checklist1[j].index) {
+									$scope.AcceptedList[i].Delivered = $scope.checklist1[j].status;
 
-							}	
+								}	
 							}
 
-						}
+						
 
-					} else if ($scope.AcceptedList.length <= 200 && $scope.checklist2 != undefined && $scope.checklist2.length != 0) {
-						for (var i = 100; i < $scope.AcceptedList.length; i++) {
+					}
+					 		if (i >= 100 && i < 200 && $scope.checklist2 != undefined && $scope.checklist2.length != 0) {
+						
 							for(var j = 0 ; j < $scope.checklist2.length ; j++){
 							
 							if ($scope.AcceptedList[i].ID === $scope.checklist2[j].index) {
@@ -189,46 +196,46 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 
 							}	
 							}
-						}
-
-					} else if ($scope.AcceptedList.length <= 300 && $scope.checklist3 != undefined && $scope.checklist3.length != 0) {
-						for (var i = 200; i < $scope.AcceptedList.length; i++) {
-							for(var j = 0 ; j < $scope.checklist3.length ; j++){
-							
-							if ($scope.AcceptedList[i].ID === $scope.checklist3[j].index) {
-								$scope.AcceptedList[i].Delivered = $scope.checklist3[j].status;
-
-							}	
-							}
-						}
-
-					} else if ($scope.AcceptedList.length <= 400 && $scope.checklist4 != undefined && $scope.checklist4.length != 0) {
-						for (var i = 300; i < $scope.AcceptedList.length; i++) {
-							for(var j = 0 ; j < $scope.checklist4.length ; j++){
-							
-							if ($scope.AcceptedList[i].ID === $scope.checklist4[j].index) {
-								$scope.AcceptedList[i].Delivered = $scope.checklist4[j].status;
-
-							}	
-							}
-
-						}
-
-					} else if ($scope.AcceptedList.length <= 500 && $scope.checklist5 != undefined && $scope.checklist5.length != 0) {
-						for (var i = 400; i < $scope.AcceptedList.length; i++) {
-							for(var j = 0 ; j < $scope.checklist5.length ; j++){
-							
-							if ($scope.AcceptedList[i].ID === $scope.checklist5[j].index) {
-								$scope.AcceptedList[i].Delivered = $scope.checklist5[j].status;
-
-							}	
-							}
-
-						}
+						
 
 					}
+					 		if (i >= 200 && i < 300 && $scope.checklist3 != undefined && $scope.checklist3.length != 0) {
+							for(var j = 0 ; j < $scope.checklist3.length ; j++){
+							
+								if ($scope.AcceptedList[i].ID === $scope.checklist3[j].index) {
+									$scope.AcceptedList[i].Delivered = $scope.checklist3[j].status;
 
-				},
+								}	
+							}
+						
+
+					}
+					 		if (i >= 300 && i < 400 && $scope.checklist4 != undefined && $scope.checklist4.length != 0) {
+						
+							for(var j = 0 ; j < $scope.checklist4.length ; j++){
+							
+								if ($scope.AcceptedList[i].ID === $scope.checklist4[j].index) {
+									$scope.AcceptedList[i].Delivered = $scope.checklist4[j].status;
+
+								}	
+							}
+
+						
+
+					}
+							if (i >= 400 && i < 500 && $scope.checklist5 != undefined && $scope.checklist5.length != 0) {
+						for(var j = 0 ; j < $scope.checklist5.length ; j++){
+							
+								if ($scope.AcceptedList[i].ID === $scope.checklist5[j].index) {
+									$scope.AcceptedList[i].Delivered = $scope.checklist5[j].status;
+
+								}	
+							}
+					
+	
+					}
+						}
+			},
 				function (response) {
 					//(response.statusText);
 				});
@@ -247,9 +254,12 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 		$scope.checklist3 = [];
 		$scope.checklist4 = [];
 		$scope.checklist5 = [];
-
-		if ($scope.AcceptedList.length <= 100) {
-			for (var i = 0; i < $scope.AcceptedList.length; i++) {
+		console.log($scope.AcceptedList) ; 
+		
+		for(var i = 0 ; i< $scope.AcceptedList.length ; i++){
+					
+			if (i < 80) {
+				//console.log("ss") ; 
 				if ($scope.AcceptedList[i].Delivered) {
 					$scope.checklist1.push({
 						status: true,
@@ -262,10 +272,12 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 					index: $scope.AcceptedList[i].ID
 				});
 
-			}
+			
 
-		} else if ($scope.AcceptedList.length <= 200) {
-			for (var i = 100; i < $scope.AcceptedList.length; i++) {
+		} 
+			if (i >= 100 && i < 200) {
+				//	console.log('ss11'); 
+				//console.log(i) ; 
 				if ($scope.AcceptedList[i].Delivered) {
 					$scope.checklist2.push({
 						status: true,
@@ -278,10 +290,11 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 					index: $scope.AcceptedList[i].ID
 				});
 
-			}
+			
 
-		} else if ($scope.AcceptedList.length <= 300) {
-			for (var i = 200; i < $scope.AcceptedList.length; i++) {
+		}
+		 	if (i>= 200 && i < 300) {
+			
 				if ($scope.AcceptedList[i].Delivered) {
 					$scope.checklist3.push({
 						status: true,
@@ -294,10 +307,10 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 					index: $scope.AcceptedList[i].ID
 				});
 
-			}
+			
 
-		} else if ($scope.AcceptedList.length <= 400) {
-			for (var i = 300; i < $scope.AcceptedList.length; i++) {
+		} 
+			if ( i>= 300 && i < 400) {
 				if ($scope.AcceptedList[i].Delivered) {
 					$scope.checklist4.push({
 						status: true,
@@ -310,10 +323,11 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 					index: $scope.AcceptedList[i].ID
 				});
 
-			}
+			
 
-		} else if ($scope.AcceptedList.length <= 500) {
-			for (var i = 400; i < $scope.AcceptedList.length; i++) {
+		} 
+			if (i>= 400 && i < 500) {
+			
 				if ($scope.AcceptedList[i].Delivered) {
 					$scope.checklist5.push({
 						status: true,
@@ -326,10 +340,14 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 					index: $scope.AcceptedList[i].ID
 				});
 
-			}
+			
 
 		}
-
+			
+		} 
+		console.log($scope.checklist1) ; 
+		console.log($scope.checklist2) ; 
+		
 		$cookies.putObject('CheckList1', $scope.checklist1);
 		$cookies.putObject('CheckList2', $scope.checklist2);
 		$cookies.putObject('CheckList3', $scope.checklist3);
