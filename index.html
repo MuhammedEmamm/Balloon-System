@@ -16,37 +16,45 @@
 		<thead class="thead-dark">
 			<tr>
 				<th scope="col">#</th>
-				<th scope="col">Who</th>
-				<th scope="col">Problem Index</th>
-				<th scope="col">Problem Name</th>
+				<th scope="col" class="text-center">Who</th>
+				<th scope="col" class="text-center">Problem Index</th>
+				<th scope="col" class="text-center">Problem Name</th>
 				<th scope="col">Problem Color</th>
-				<th scope="col">Delivered</th>
-				<th scope="col">Balloon Status</th>
-				<th scope="col">Room</th>
+				<th scope="col" class="text-center">Delivered</th>
+				<th scope="col" class="text-center">Balloon Status</th>
+				<th scope="col" class="text-center">Room</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr ng-repeat="x in AcceptedList">
 				<th scope="row">{{x.ID}}</th>
-				<td>{{x.Handle}}</td>
-				<td>{{x.ProblemIndex}}</td>
-				<td>{{x.ProblemName}} </td>
-				<td>
-					<div style="height: 25px ; width: 50px; background-color:blueviolet; border-radius: 10px" ng-if="x.BalloonColor=='FU'"></div>
-					<div style="height: 25px ; width: 50px; background-color: silver; border-radius: 10px" ng-if="x.BalloonColor=='SL'"></div>
-					<div style="height: 25px ; width: 50px; background-color: darkgoldenrod; border-radius: 10px" ng-if="x.BalloonColor=='GD'"></div>
-					<div style="height: 25px ; width: 50px; background-color: deepskyblue; border-radius: 10px" ng-if="x.BalloonColor=='LB'"></div>
-					<div style="height: 25px ; width: 50px; background-color: red; border-radius: 10px" ng-if="x.BalloonColor=='RD'"></div>
+				<td class="text-center">{{x.Handle}}</td>
+				<td class="text-center">{{x.ProblemIndex}}</td>
+				<td class="text-center">{{x.ProblemName}} </td>
+				<td class="text-center">
+					<div class="text-center" style="height: 25px ; width: 50px; background-color:blue; border-radius: 10px" ng-if="x.BalloonColor=='BL'"></div>
+					<div class="text-center" style="height: 25px ; width: 50px; background-color: darkgreen; border-radius: 10px" ng-if="x.BalloonColor=='DG'"></div>
+					<div class="text-center" style="height: 25px ; width: 50px; background-color: pink; border-radius: 10px" ng-if="x.BalloonColor=='PI'"></div>
+					<div class="text-center" style="height: 25px ; width: 50px; background-color: white; border-radius: 10px ; border: 1px solid black" ng-if="x.BalloonColor=='WH'"></div>
+					<div class="text-center" style="height: 25px ; width: 50px; background-color: red; border-radius: 10px" ng-if="x.BalloonColor=='RD'"></div>
+					<div class="text-center" style="height: 25px ; width: 50px; background-color:lightgreen; border-radius: 10px" ng-if="x.BalloonColor=='LG'"></div>
+					<div class="text-center" style="height: 25px ; width: 50px; background-color: yellow; border-radius: 10px" ng-if="x.BalloonColor=='YE'"></div>
+					<div class="text-center" style="height: 25px ; width: 50px; background-color: cyan; border-radius: 10px" ng-if="x.BalloonColor=='CY'"></div>
+					<div class="text-center" style="height: 25px ; width: 50px; background-color: grey; border-radius: 10px" ng-if="x.BalloonColor=='GR'"></div>
+					<div class="text-center" style="height: 25px ; width: 50px; background-color: orange; border-radius: 10px" ng-if="x.BalloonColor=='OR'"></div>
+					<div class="text-center" style="height: 25px ; width: 50px; background-color: #915f6d; border-radius: 10px" ng-if="x.BalloonColor=='LM'"></div>
+					
+					
 				</td>
-				<td>
+				<td class="text-center">
 					<div class="checkbox">
 						<input type="checkbox" ng-model="x.Delivered" ng-click="SaveCheckList()">
 					</div>
 				</td>
-				<td>
+				<td class="text-center">
 					<span ng-if="x.BalloonsCount===3" class="badge badge-pill badge-primary">First Accepted</span><span ng-if="x.BalloonsCount===2" class="badge badge-pill badge-info">First Solved</span><span ng-if="x.BalloonsCount===1" class="badge badge-pill badge-success">Accepted</span>
 				</td>
-				<td>{{x.Room}}</td>
+				<td class="text-center">{{x.Room}}</td>
 			</tr>
 
 		</tbody>
@@ -57,7 +65,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12 pull-left">
-					<p class="text-center" style="color: white ; font-family: 'Anton', sans-serif;">Designed and developed by acmASCIS's Technical Committee. 2018 All Rights Reserved.</p>
+					<p class="text-center" style="color: white ; font-family: 'Anton', sans-serif;"><img src="assets/images/acmicon.png">&nbsp;Designed and developed by acmASCIS's Technical Committee. 2018 All Rights Reserved.</p>
 				</div>
 			</div>
 		</div>

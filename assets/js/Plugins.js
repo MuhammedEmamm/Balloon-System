@@ -13,63 +13,63 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 			{
 				index: "A",
 				solved: false,
-				color: "LB"
+				color: "BL"
 		},
 			{
 				index: "B",
 				solved: false,
-				color: "SL"
+				color: "DG"
 
 		},
 			{
 				index: "C",
 				solved: false,
-				color: "SL"
+				color: "PI"
 		},
 			{
 				index: "D",
 				solved: false,
-				color: "GD"
+				color: "WH"
 		},
 			{
 				index: "E",
 				solved: false,
-				color: "LB"
+				color: "RD"
 		},
 			{
 				index: "F",
 				solved: false,
-				color: "RD"
+				color: "LG"
 		},
 			{
 				index: "G",
 				solved: false,
-				color: "GD"
+				color: "YE"
 		},
 			{
 				index: "H",
 				solved: false,
-				color: "SL"
+				color: "CY"
 		},
 			{
 				index: "I",
 				solved: false,
-				color: "SL"
+				color: "DB"
 		},
 			{
 				index: "J",
 				solved: false,
-				color: "SL"
+				color: "GR"
 		},
 			{
 				index: "K",
 				solved: false,
-				color: "FU"
+				color: "OR"
 		},
 			{
 				index: "L",
 				solved: false,
-				color: "LB"
+				color: "LM"
 		}
 	];
 
@@ -98,21 +98,21 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 		//(rand);
 		$scope.AcceptedList = [];
 
-		var url = rand + '/contest.status?apiKey=52360b91db3382d325cc2670ef8ededc38bf6593&contestId=222703&time=' + time + '#04581cc12a2b342c4f55095f1e735252095fcf63';
+		var url = rand + '/contest.status?apiKey=52360b91db3382d325cc2670ef8ededc38bf6593&contestId=226071&time=' + time + '#04581cc12a2b342c4f55095f1e735252095fcf63';
 
 		$http({
 				method: 'GET',
-				url: 'http://codeforces.com/api/contest.status?contestId=222703&apiKey=52360b91db3382d325cc2670ef8ededc38bf6593&time=' + time + '&apiSig=' + rand + SHA512(url)
+				url: 'http://codeforces.com/api/contest.status?contestId=226071&apiKey=52360b91db3382d325cc2670ef8ededc38bf6593&time=' + time + '&apiSig=' + rand + SHA512(url)
 			})
 			.then(function (response) {
 					//(response.data.result);
 					var id = 1;
 					$scope.all = response.data.result.reverse();
-			//console.log($scope.all) ; 
+					//console.log($scope.all) ; 
 					
 					for (var i = 0; i < $scope.all.length; i++) {
 
-						if (($scope.all[i].verdict === "OK") && ($scope.all[i].author.members[0].handle === 'hajergad' || $scope.all[i].author.members[0].handle === 'AhmedMohamd-BeatMeIFUCAN' || $scope.all[i].author.members[0].handle === 'nSayed' || $scope.all[i].author.members[0].handle === 'abdelrahman____tarek' || $scope.all[i].author.members[0].handle === 'm.yossry' || $scope.all[i].author.members[0].handle === 'Heshamovic' || $scope.all[i].author.members[0].handle === 'HazemEssawi' || $scope.all[i].author.members[0].handle === 'AbdullahKamal' || $scope.all[i].author.members[0].handle === 'Hazemahmed' || $scope.all[i].author.members[0].handle === 'Zooma' || $scope.all[i].author.members[0].handle === 'islammohsen' || $scope.all[i].author.members[0].handle === 'Mark_Louba' || $scope.all[i].author.members[0].handle === 'omniaa' || $scope.all[i].author.members[0].handle === 'WaleedEhab_ChelseaFC' || $scope.all[i].author.members[0].handle === '.99.' || $scope.all[i].author.members[0].handle === 'MohammadAmr')) {
+						if (($scope.all[i].verdict === "OK") && ($scope.all[i].author.members[0].handle === 'Islammohsen' || $scope.all[i].author.members[0].handle === 'natha'|| $scope.all[i].author.members[0].handle === 'AhmedMohamd-BeatMeIFUCAN' || $scope.all[i].author.members[0].handle === 'Wait-Us-ICPC' || $scope.all[i].author.members[0].handle === 'MinaToma' || $scope.all[i].author.members[0].handle === 'Heshamovic' || $scope.all[i].author.members[0].handle === 'Bohoty' || $scope.all[i].author.members[0].handle === 'Error_404' || $scope.all[i].author.members[0].handle === 'hazemahmed' || $scope.all[i].author.members[0].handle === 'Lama_Modar' || $scope.all[i].author.members[0].handle === 'Mahmoud.Mehisen' || $scope.all[i].author.members[0].handle === 'abdelrahman____tarek')) {
 							$scope.AcceptedList.push({
 								ID: (id),
 								Handle: $scope.all[i].author.members[0].handle,
@@ -121,11 +121,12 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 								BalloonsCount: 1,
 								Delivered: false,
 								BalloonColor: "",
-								Room: 'B'
+								Room: 'Training Room'
 							});
 
 							id++;
-						} else if ($scope.all[i].verdict === "OK") {
+						} 
+						else if ($scope.all[i].verdict === "OK" && ($scope.all[i].author.members[0].handle === 'Medo.22' || $scope.all[i].author.members[0].handle === 'mohamedalaa130599' || $scope.all[i].author.members[0].handle === 'lero1312' || $scope.all[i].author.members[0].handle === 'HazemEssawi' || $scope.all[i].author.members[0].handle === '.99.')) {
 							$scope.AcceptedList.push({
 								ID: (id),
 								Handle: $scope.all[i].author.members[0].handle,
@@ -134,10 +135,23 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 								BalloonsCount: 1,
 								Delivered: false,
 								BalloonColor: "",
-								Room: 'A'
+								Room: 'Kazablanka Room'
 							});
 							id++;
 
+						}
+						else if($scope.all[i].verdict === "OK"){
+							$scope.AcceptedList.push({
+								ID: (id),
+								Handle: $scope.all[i].author.members[0].handle,
+								ProblemIndex: $scope.all[i].problem.index,
+								ProblemName: $scope.all[i].problem.name,
+								BalloonsCount: 1,
+								Delivered: false,
+								BalloonColor: "",
+								Room: 'Meeting Room'
+							});
+							id++;
 						}
 					}
 					
@@ -345,8 +359,8 @@ Balloon.controller('BalloonSystem', ['$scope', '$http', '$cookies', function ($s
 		}
 			
 		} 
-		console.log($scope.checklist1) ; 
-		console.log($scope.checklist2) ; 
+		//console.log($scope.checklist1) ; 
+		//console.log($scope.checklist2) ; 
 		
 		$cookies.putObject('CheckList1', $scope.checklist1);
 		$cookies.putObject('CheckList2', $scope.checklist2);
